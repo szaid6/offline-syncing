@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
 import { User } from "../types"; // Assuming User type is defined
 
 const columns: GridColDef<User>[] = [
@@ -82,6 +82,7 @@ export default function DataTable({ data }: { data: User[] }) {
                 pageSizeOptions={[10, 20]}
                 checkboxSelection
                 disableRowSelectionOnClick
+                slots={{ toolbar: GridToolbar }} // Adds export and other utilities
             />
         </Box>
     );
